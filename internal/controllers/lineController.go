@@ -25,8 +25,6 @@ func GetLines(c *gin.Context) {
 func SetLine(c *gin.Context) {
 	var newLine models.Line
 
-	println(c.Request.Method)
-
 	if err := c.ShouldBindJSON(&newLine); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid JSON"})
 		return
